@@ -6,8 +6,8 @@ package:
 
 source:
     fn: jupyterlab-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/87/5f/05f08de58c835012a119b83557e04d66af88b238141b329059e903b78566/jupyterlab-{{ version }}.tar.gz
-    md5: 33a730a8880023633ffb36f2bbd34c5
+    url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
+    md5: 33a730a8880023633ffb36f2bbd34c5c
 
 build:
   number: 0
