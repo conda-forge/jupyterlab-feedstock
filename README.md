@@ -11,6 +11,18 @@ Summary: A pre-alpha version of a computational environment for Jupyter.
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/jupyterlab-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/jupyterlab-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/jupyterlab-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/jupyterlab-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/jupyterlab-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/jupyterlab-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/jupyterlab/badges/version.svg)](https://anaconda.org/conda-forge/jupyterlab)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/jupyterlab/badges/downloads.svg)](https://anaconda.org/conda-forge/jupyterlab)
+
 Installing jupyterlab
 =====================
 
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `jupyterlab` available on your pla
 ```
 conda search jupyterlab --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/jupyterlab-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/jupyterlab-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/jupyterlab-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/jupyterlab-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/jupyterlab-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/jupyterlab-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/jupyterlab/badges/version.svg)](https://anaconda.org/conda-forge/jupyterlab)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/jupyterlab/badges/downloads.svg)](https://anaconda.org/conda-forge/jupyterlab)
 
 
 Updating jupyterlab-feedstock
