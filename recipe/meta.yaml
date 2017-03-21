@@ -28,7 +28,7 @@ test:
     - jupyterlab
 
 about:
-  home: https://github.com/jupyter/jupyterlab
+  home: https://github.com/jupyterlab/jupyterlab
   license: BSD 3-Clause
   summary: A pre-alpha version of a computational environment for Jupyter.
 
