@@ -1,7 +1,7 @@
 About jupyterlab
 ================
 
-Home: https://github.com/jupyter/jupyterlab
+Home: https://github.com/jupyterlab/jupyterlab
 
 Package license: BSD 3-Clause
 
