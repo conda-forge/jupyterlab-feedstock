@@ -21,7 +21,7 @@ requirements:
     - setuptools
   run:
     - python
-    - jupyterlab_launcher<0.2
+    - jupyterlab_launcher <0.2
     - notebook >=4.2
 
 test:
