@@ -9,7 +9,7 @@ source:
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
     sha256: 22a1913f8251b7cc6b3a4a5527017b9ecf612df5f96ac1805f762894794e1344
 build:
-  number: 1
+  number: 2
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
