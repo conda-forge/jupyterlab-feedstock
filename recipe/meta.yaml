@@ -1,4 +1,4 @@
-{% set version = "0.28.0" %}
+{% set version = "0.28.3" %}
 
 package:
   name: jupyterlab
@@ -7,7 +7,7 @@ package:
 source:
     fn: jupyterlab-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-    sha256: 0448cd78d9b3269c9d6d87ad5e22348184a6b0e571d688714a0404f565214ec9
+    sha256: a6e34ff7a55ea41249a62668c6fcbe0c11a6d1067948382b1b07b163438b4051
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
@@ -31,6 +31,7 @@ test:
 about:
   home: https://github.com/jupyterlab/jupyterlab
   license: BSD 3-Clause
+  license_file: LICENSE
   summary: A pre-alpha version of a computational environment for Jupyter.
 
 extra:
