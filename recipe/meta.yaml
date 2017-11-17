@@ -1,4 +1,6 @@
-{% set version = "0.29.1" %}
+{% set version = "0.29.2" %}
+{% set sha256 = "3e073ec37ce02fc10bcbe8cdb3785f31825cf4490303054804137aa890c3f1a9" %}
+
 
 package:
   name: jupyterlab
@@ -7,7 +9,7 @@ package:
 source:
     fn: jupyterlab-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-    sha256: e015fc117ee28420eab20e6ca10dea8a50a4d9e65d7785d6606ba5b068237e22
+    sha256: {{ sha256 }}
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
