@@ -26,8 +26,8 @@ requirements:
     - python
     - jupyterlab_launcher >=0.6.0,<0.7.0
     - notebook >=4.3
-    - futures # [py27]
-    - subprocess32  # [py2k and unix]
+    - futures  # [py27]
+    - subprocess32   # [py2k and unix]
 test:
   imports:
     - jupyterlab
