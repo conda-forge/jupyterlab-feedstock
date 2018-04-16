@@ -1,5 +1,5 @@
-{% set version = "0.31.12" %}
-{% set sha256 = "3feb8da187bfdc3eab4b5e0bd9f3a92951a2828f42bf46237dc3a0ac57bae6c2" %}
+{% set version = "0.32.0" %}
+{% set sha256 = "489c6ba7df0bb8946bc47c19587e6ed35df82e3df7da0f6e8b17061c30a816e1" %}
 
 
 package:
@@ -11,8 +11,8 @@ source:
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 build:
-  number: 1
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
@@ -21,7 +21,7 @@ build:
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - jupyterlab_launcher >=0.10.0,<0.11.0
@@ -43,3 +43,6 @@ extra:
     - jasongrout
     - blink1073
     - jochym
+    - ian-r-rose
+    - afshin
+    - ellisonbg
