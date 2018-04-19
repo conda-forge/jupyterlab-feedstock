@@ -26,8 +26,8 @@ requirements:
     - python
     - jupyterlab_launcher >=0.10.0,<0.11.0
     - notebook >=4.3
-    - futures  # [py27]
-    - subprocess32   # [py2k and unix]
+    - futures  # [py2k]
+    - subprocess32   # [py2k]
 test:
   requires:
     - nodejs
