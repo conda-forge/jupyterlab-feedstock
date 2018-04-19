@@ -11,8 +11,8 @@ source:
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 build:
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1
+  script: python -m pip install --no-deps --ignore-installed --install-option="--skip-npm" --verbose .
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
@@ -29,14 +29,43 @@ requirements:
     - futures  # [py27]
     - subprocess32   # [py2k and unix]
 test:
+  requires:
+    - nodejs
   imports:
     - jupyterlab
+  commands:
+    - jupyter lab --version
+    - jlpm --version
+    - jupyter labextension list
+    - jupyter lab path
+    - jupyter lab build
+    - jupyter lab clean
 
 about:
   home: https://github.com/jupyterlab/jupyterlab
-  license: BSD 3-Clause
+  license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE
-  summary: A pre-alpha version of a computational environment for Jupyter.
+  summary: >
+    An extensible environment for interactive and reproducible computing, based
+    on the Jupyter Notebook and Architecture. Currently in beta.
+  doc_url: https://jupyterlab.readthedocs.io
+  dev_url: https://github.com/jupyterlab/jupyterlab
+  description: >
+    JupyterLab is the next-generation user interface for Project Jupyter. It
+    offers all the familiar building blocks of the classic Jupyter Notebook
+    (notebook, terminal, text editor, file browser, rich outputs, etc.) in a
+    flexible and powerful user inteface. Eventually, JupyterLab will replace
+    the classic Jupyter Notebook after JupyterLab reaches 1.0.
+
+    JupyterLab can be extended using extensions that are npm packages and use
+    our public APIs. You can search for the GitHub topic jupyterlab-extension
+    to find extensions. To learn more about extensions, see our user
+    documentation.
+
+    The beta releases are suitable for general usage. For JupyterLab extension
+    developers, the extension APIs will continue to evolve until the 1.0
+    release.
 
 extra:
   recipe-maintainers:
