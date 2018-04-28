@@ -24,10 +24,10 @@ Current build status
 
 Current release info
 ====================
-[![Conda Recipe](https://img.shields.io/badge/recipe-jupyterlab-green.svg)](https://anaconda.org/conda-forge/jupyterlab)
-[![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyterlab.svg)](https://anaconda.org/conda-forge/jupyterlab)
-[![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyterlab.svg)](https://anaconda.org/conda-forge/jupyterlab)
-[![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyterlab.svg)](https://anaconda.org/conda-forge/jupyterlab)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-jupyterlab-green.svg)](https://anaconda.org/conda-forge/jupyterlab) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyterlab.svg)](https://anaconda.org/conda-forge/jupyterlab) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyterlab.svg)](https://anaconda.org/conda-forge/jupyterlab) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyterlab.svg)](https://anaconda.org/conda-forge/jupyterlab) |
 
 Installing jupyterlab
 =====================
