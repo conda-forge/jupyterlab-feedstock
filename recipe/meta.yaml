@@ -11,7 +11,7 @@ source:
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 build:
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed --install-option="--skip-npm" --verbose .
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
@@ -32,12 +32,13 @@ requirements:
     - nodejs <10
 test:
   requires:
-    - nodejs <10
+    - nodejs >=8, <10
   imports:
     - jupyterlab
   commands:
     - jupyter lab --version
     - jlpm --version
+    - jlpm versions
     - jupyter labextension list
     - jupyter lab path
     - jupyter lab build
