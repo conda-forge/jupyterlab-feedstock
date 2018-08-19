@@ -1,5 +1,6 @@
-{% set version = "0.33.12" %}
-{% set sha256 = "04a14b38b218c87731b519ff0f7e133b28a613ad944617ac7e07480d6a36eb5f" %}
+
+{% set version = "0.34.0" %}
+{% set sha256 = "65ac55403f7e5b49e9919e1eaad5e1ad55eeea2a41e35fba570cf1bed0845e25" %}
 
 
 package:
@@ -12,6 +13,7 @@ source:
     sha256: {{ sha256 }}
 build:
   number: 0
+  skip: True  # [py2k]
   script: python -m pip install --no-deps --ignore-installed --install-option="--skip-npm" --verbose .
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
@@ -22,17 +24,14 @@ requirements:
   build:
     - python
     - pip
+    - nodejs
   run:
     - python
-    - jupyterlab_launcher >=0.11.2,<0.12.0
+    - jupyterlab_launcher >=0.13.1,<0.14.0
     - notebook >=4.3
-    - futures  # [py2k]
-    - subprocess32   # [py2k]
-  run_constrained:
-    - nodejs <10
 test:
   requires:
-    - nodejs <10
+    - nodejs
   imports:
     - jupyterlab
   commands:
