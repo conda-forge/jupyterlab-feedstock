@@ -24,11 +24,14 @@ requirements:
   build:
     - python
     - pip
+    - nodejs
   run:
     - python
     - jupyterlab_launcher >=0.13.1,<0.14.0
     - notebook >=4.3
 test:
+  requires:
+    - nodejs
   imports:
     - jupyterlab
   commands:
