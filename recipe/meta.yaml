@@ -12,7 +12,7 @@ source:
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 build:
-  number: 0
+  number: 1000
   skip: True  # [py2k]
   script: python -m pip install --no-deps --ignore-installed --install-option="--skip-npm" --verbose .
   entry_points:
