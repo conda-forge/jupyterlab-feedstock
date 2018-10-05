@@ -13,6 +13,7 @@ source:
     sha256: {{ sha256 }}
 build:
   number: 0
+  skip: True  # [py2k]
   script: python -m pip install --no-deps --ignore-installed --install-option="--skip-npm" --verbose .
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
