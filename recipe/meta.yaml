@@ -23,7 +23,7 @@ requirements:
   build:
     - python >=3.5
     - pip
-    - nodejs
+    - nodejs >=8
   run:
     - python >=3.5
     - jupyterlab_server >=0.2.0,<0.3.0
@@ -36,6 +36,7 @@ test:
   commands:
     - jupyter lab --version
     - jlpm --version
+    - jlpm versions
     - jupyter labextension list
     - jupyter lab path
     - jupyter lab build
