@@ -1,6 +1,6 @@
 
-{% set version = "0.34.12" %}
-{% set sha256 = "7d8378d19a0ae173e91a493db996c37828b410b7ee556da21a153486168ecf87" %}
+{% set version = "0.35.0" %}
+{% set sha256 = "427e04978336c0f9c95919b75434f004e49b99bf92f0d24c334478fcf7ad9ca3" %}
 
 
 package:
@@ -12,7 +12,7 @@ source:
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 build:
-  number: 1000
+  number: 0
   skip: True  # [py2k]
   script: python -m pip install --no-deps --ignore-installed --install-option="--skip-npm" --verbose .
   entry_points:
@@ -22,13 +22,13 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.5
     - pip
-    - nodejs
+    - nodejs >=8
   run:
-    - python
-    - jupyterlab_launcher >=0.13.1,<0.14.0
-    - notebook >=4.3
+    - python >=3.5
+    - jupyterlab_server >=0.2.0,<0.3.0
+    - notebook >=4.3.1
 test:
   requires:
     - nodejs
@@ -37,6 +37,7 @@ test:
   commands:
     - jupyter lab --version
     - jlpm --version
+    - jlpm versions
     - jupyter labextension list
     - jupyter lab path
     - jupyter lab build
