@@ -1,6 +1,6 @@
 
-{% set version = "0.35.0" %}
-{% set sha256 = "427e04978336c0f9c95919b75434f004e49b99bf92f0d24c334478fcf7ad9ca3" %}
+{% set version = "0.35.1" %}
+{% set sha256 = "d78a342deaa9ea34bde1160c2e32a4bfc5ddaaaf2f9614d2d19328db8e978f49" %}
 
 
 package:
@@ -12,7 +12,7 @@ source:
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 build:
-  number: 1
+  number: 0
   skip: True  # [py<35]
   script: python -m pip install --no-deps --ignore-installed --install-option="--skip-npm" --verbose .
   entry_points:
