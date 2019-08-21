@@ -1,0 +1,6 @@
+channel_sources:
+- conda-forge/label/prerelease-jupyterlab,conda-forge,defaults
+channel_targets:
+- conda-forge prerelease-jupyterlab
+docker_image:
+- condaforge/linux-anvil-comp7
