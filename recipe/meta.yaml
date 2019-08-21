@@ -12,6 +12,7 @@ source:
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 build:
+  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
   entry_points:
