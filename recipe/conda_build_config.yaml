@@ -1,0 +1,4 @@
+channel_sources:
+- conda-forge/label/prerelease-jupyterlab,conda-forge,defaults
+channel_targets:
+- conda-forge prerelease-jupyterlab
