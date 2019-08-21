@@ -13,8 +13,7 @@ source:
     sha256: {{ sha256 }}
 build:
   number: 0
-  skip: True  # [py<35]
-  script: python -m pip install --no-deps --ignore-installed --install-option="--skip-npm" --verbose .
+  script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
@@ -22,12 +21,12 @@ build:
     - jlpm = jupyterlab.jlpmapp:main
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=3.5
     - pip
     - nodejs >=8
   run:
-    - python
+    - python >=3.5
     - jupyterlab_server >=1.0.0,<2.0.0
     - notebook >=4.3.1
     - tornado !=6.0.0,!=6.0.1,!=6.0.2
