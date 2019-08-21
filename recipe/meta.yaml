@@ -1,6 +1,6 @@
 
-{% set version = "1.0.7" %}
-{% set sha256 = "29a21836241f84c9a702cff484d5ed58e034d519c3a0e045741535879fbfd269" %}
+{% set version = "1.0.8" %}
+{% set sha256 = "56777375393efbc556ac476c307baee5ac073d184309c8989ca4ceb89a9f7abb" %}
 
 
 package:
@@ -31,6 +31,7 @@ requirements:
     - jupyterlab_server >=1.0.0,<2.0.0
     - notebook >=4.3.1
     - tornado !=6.0.0,!=6.0.1,!=6.0.2
+    - jinja2 >=2.10
 test:
   requires:
     - nodejs
