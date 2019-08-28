@@ -1,6 +1,6 @@
 
-{% set version = "1.0.10" %}
-{% set sha256 = "ed6702bed31314e7b9ee10dcda044ad61d1fe3c4caae3e1014ab426855726a6d" %}
+{% set version = "1.1.0" %}
+{% set sha256 = "adec261397357328e6a79a35df4bcb3cf5ddbe434dd80eb2d953211dfbe464e9" %}
 
 
 package:
@@ -12,9 +12,9 @@ source:
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
     sha256: {{ sha256 }}
 build:
+  noarch: python
   number: 0
-  skip: True  # [py<35]
-  script: python -m pip install --no-deps --ignore-installed --install-option="--skip-npm" --verbose .
+  script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
@@ -22,12 +22,12 @@ build:
     - jlpm = jupyterlab.jlpmapp:main
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=3.5
     - pip
     - nodejs >=8
   run:
-    - python
+    - python >=3.5
     - jupyterlab_server >=1.0.0,<2.0.0
     - notebook >=4.3.1
     - tornado !=6.0.0,!=6.0.1,!=6.0.2
