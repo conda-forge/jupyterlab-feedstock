@@ -1,5 +1,5 @@
-{% set version = "2.0.1" %}
-{% set sha256 = "5d1a833a9e49e6d90d68191917cb16a97ff4ec668c26c85d33ebce629df14141" %}
+{% set version = "2.1.0rc0" %}
+{% set sha256 = "761fd4fd958d1c9f8bb162bd0eca4692ff7f865086d65e1f9c0172ffbba9e635" %}
 
 
 package:
@@ -24,7 +24,7 @@ requirements:
   host:
     - python >=3.5
     - pip
-    - nodejs >=12
+    - nodejs >=10
   run:
     - python >=3.5
     - jupyterlab_server >=1.0.0,<2.0.0
@@ -33,7 +33,7 @@ requirements:
     - jinja2 >=2.10
 test:
   requires:
-    - nodejs >=12
+    - nodejs >=10
   imports:
     - jupyterlab
   commands:

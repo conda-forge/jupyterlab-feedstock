@@ -1,6 +1,6 @@
 channel_sources:
 - conda-forge,defaults
 channel_targets:
-- conda-forge main
+- conda-forge jupyterlab_rc
 docker_image:
 - condaforge/linux-anvil-comp7
