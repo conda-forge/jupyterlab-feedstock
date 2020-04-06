@@ -1,5 +1,5 @@
-{% set version = "2.0.1" %}
-{% set sha256 = "5d1a833a9e49e6d90d68191917cb16a97ff4ec668c26c85d33ebce629df14141" %}
+{% set version = "2.0.2" %}
+{% set sha256 = "73a1bbbd5f0edc73503f5e2566905eef37ee305beaa8bc597b46cd3e869dd684" %}
 
 
 package:
@@ -71,3 +71,4 @@ extra:
     - ian-r-rose
     - afshin
     - ellisonbg
+    - saulshanabrook
