@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
@@ -27,7 +27,7 @@ requirements:
     - nodejs >=10
   run:
     - python >=3.5
-    - jupyterlab_server >=1.0.0,<2.0.0
+    - jupyterlab_server >=1.1.0,<2.0.0
     - notebook >=4.3.1
     - tornado !=6.0.0,!=6.0.1,!=6.0.2
     - jinja2 >=2.10
