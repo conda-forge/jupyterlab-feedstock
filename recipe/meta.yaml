@@ -12,12 +12,11 @@ source:
   sha256: {{ sha256 }}
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
-    - jupyter-labhub = jupyterlab.labhubapp:main
     - jlpm = jupyterlab.jlpmapp:main
 
 requirements:
