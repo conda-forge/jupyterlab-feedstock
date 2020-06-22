@@ -1,5 +1,5 @@
-{% set version = "2.1.4" %}
-{% set sha256 = "7b5bd4a05330a01c8522ee7f1cda5cb2e0d96412d9e1e879a19b3afb63d4ac69" %}
+{% set version = "2.1.5" %}
+{% set sha256 = "ca7b92491c32b66ad97be4a44d79aa702e4b6c59167e4189d5ce8cc742b15298" %}
 
 
 package:
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
