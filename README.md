@@ -5,7 +5,7 @@ Home: https://github.com/jupyterlab/jupyterlab
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Architecture.
 
