@@ -25,6 +25,7 @@ requirements:
     - python >=3.6
     - pip
     - nodejs >=10
+    - jupyter-packaging
   run:
     - python >=3.6
     - jupyterlab_server >=2.0.0rc1,<3.0.0
