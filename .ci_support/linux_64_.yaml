@@ -1,5 +1,5 @@
 channel_sources:
-- conda-forge,defaults
+- conda-forge/label/jupyterlab_server_rc,conda-forge,defaults
 channel_targets:
 - conda-forge jupyterlab_rc
 docker_image:

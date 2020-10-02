@@ -1,5 +1,5 @@
-{% set version = "2.1.0rc0" %}
-{% set sha256 = "761fd4fd958d1c9f8bb162bd0eca4692ff7f865086d65e1f9c0172ffbba9e635" %}
+{% set version = "3.0.0rc4" %}
+{% set sha256 = "164123e2c9591a74bdbf60a83cdd073a1ca679f73b005b381f30ed2a693cf567" %}
 
 
 package:
@@ -22,15 +22,20 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
     - nodejs >=10
+    - jupyter-packaging
+    - packaging
   run:
-    - python >=3.5
-    - jupyterlab_server >=1.0.0,<2.0.0
-    - notebook >=4.3.1
+    - python >=3.6
+    - jupyterlab_server >=2.0.0rc1,<3.0.0
+    - jupyter_server >=1.0.1,<2.0.0
+    - nbclassic >=0.2.0,<0.3.0
     - tornado !=6.0.0,!=6.0.1,!=6.0.2
     - jinja2 >=2.10
+    - packaging
+
 test:
   requires:
     - nodejs >=10
@@ -71,3 +76,4 @@ extra:
     - ian-r-rose
     - afshin
     - ellisonbg
+    - jtpio
