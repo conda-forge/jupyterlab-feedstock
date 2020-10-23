@@ -5,10 +5,14 @@ Home: https://github.com/jupyterlab/jupyterlab
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab-feedstock/blob/master/LICENSE.txt)
 
 Summary: An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Architecture.
 
+
+Development: https://github.com/jupyterlab/jupyterlab
+
+Documentation: https://jupyterlab.readthedocs.io
 
 JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
 JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation.
