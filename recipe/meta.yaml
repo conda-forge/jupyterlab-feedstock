@@ -1,5 +1,5 @@
-{% set version = "3.0.0rc7" %}
-{% set sha256 = "6568bc6790e39f5d8c037d3c9f566067aae26fd3dec739461c648eb7f79383d8" %}
+{% set version = "3.0.0rc8" %}
+{% set sha256 = "efc029f172bdfb14e33221f451b98b313b960dd005ddac1979eae895386d1c8b" %}
 
 
 package:
@@ -24,7 +24,7 @@ requirements:
   host:
     - python >=3.6
     - pip
-    - nodejs >=10
+    - nodejs >=12
     - jupyter-packaging
     - packaging
   run:
@@ -39,7 +39,7 @@ requirements:
 
 test:
   requires:
-    - nodejs >=10
+    - nodejs >=12
   imports:
     - jupyterlab
   commands:
