@@ -1,5 +1,5 @@
-{% set version = "3.0.0rc13" %}
-{% set sha256 = "7d8b6328240a42998645377ac5c52313cc61c38092bc7b00fdcb1e3e6f6de8cf" %}
+{% set version = "3.0.0rc14" %}
+{% set sha256 = "053b7c6be74bc7cbf2736c633459a5848d3e93e6d7ca919cd2f903599590320f" %}
 
 
 package:
@@ -33,7 +33,7 @@ requirements:
     - jupyterlab_server >=2.0.0rc1,<3.0.0
     - jupyter_server >=1.0.1,<2.0.0
     - nbclassic >=0.2.0,<0.3.0
-    - tornado !=6.0.0,!=6.0.1,!=6.0.2
+    - tornado >=6.1
     - jinja2 >=2.10
     - packaging
 
