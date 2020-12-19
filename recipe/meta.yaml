@@ -30,7 +30,7 @@ requirements:
   run:
     - python >=3.6
     - jupyter_core
-    - jupyterlab_server >=2.0.0rc9,<3.0.0
+    - jupyterlab_server >=2.0.0rc1,<3.0.0
     - jupyter_server >=1.1.0,<2.0.0
     - nbclassic >=0.2.0,<0.3.0
     - tornado >=6.1
