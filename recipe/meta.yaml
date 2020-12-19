@@ -1,5 +1,5 @@
-{% set version = "3.0.0rc14" %}
-{% set sha256 = "053b7c6be74bc7cbf2736c633459a5848d3e93e6d7ca919cd2f903599590320f" %}
+{% set version = "3.0.0rc15" %}
+{% set sha256 = "0a53b13aea63ffbc6ef176e8984a8a3da4c5a0763a5894f435522d6179d721a2" %}
 
 
 package:
@@ -30,8 +30,8 @@ requirements:
   run:
     - python >=3.6
     - jupyter_core
-    - jupyterlab_server >=2.0.0rc1,<3.0.0
-    - jupyter_server >=1.0.1,<2.0.0
+    - jupyterlab_server >=2.0.0rc9,<3.0.0
+    - jupyter_server >=1.1.0,<2.0.0
     - nbclassic >=0.2.0,<0.3.0
     - tornado >=6.1
     - jinja2 >=2.10
