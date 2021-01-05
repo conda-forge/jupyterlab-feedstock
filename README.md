@@ -130,5 +130,5 @@ Feedstock Maintainers
 * [@ian-r-rose](https://github.com/ian-r-rose/)
 * [@jasongrout](https://github.com/jasongrout/)
 * [@jochym](https://github.com/jochym/)
-* [@saulshanabrook](https://github.com/saulshanabrook/)
+* [@jtpio](https://github.com/jtpio/)
 
