@@ -1,5 +1,5 @@
-{% set version = "3.0.0" %}
-{% set sha256 = "15228dff3f77b0bca795fd232cb25f02121510cec83f1d25856b3bc8e585b087" %}
+{% set version = "3.0.1" %}
+{% set sha256 = "72759e43d6063d4b3bf5bc4fa5ef72dd970bc43bdcb82d87affee73bbdb5be34" %}
 
 
 package:
@@ -61,11 +61,9 @@ about:
   doc_url: https://jupyterlab.readthedocs.io
   dev_url: https://github.com/jupyterlab/jupyterlab
   description: >
-    JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal,
-    text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
+    JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
 
-    JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension`
-    to find extensions. To learn more about extensions, see our user documentation.
+    JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation.
 
     JupyterLab is suitable for general usage. For JupyterLab extension developers, the extension APIs will continue to evolve.
 
