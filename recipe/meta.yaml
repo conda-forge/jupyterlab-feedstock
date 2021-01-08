@@ -1,15 +1,12 @@
-{% set version = "3.0.1" %}
-{% set sha256 = "72759e43d6063d4b3bf5bc4fa5ef72dd970bc43bdcb82d87affee73bbdb5be34" %}
-
+{% set version = "3.0.2" %}
 
 package:
   name: jupyterlab
   version: {{ version }}
 
 source:
-  fn: jupyterlab-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 7e66b9a9c652869fc2ed069fc1eef3ca3b3879d082c432f08b4e6f1c8d97ff83
 build:
   noarch: python
   number: 0
@@ -22,27 +19,31 @@ build:
 
 requirements:
   host:
-    - python >=3.6
-    - pip
+    - jupyter-packaging >=0.7.3,<0.8.0
     - nodejs >=12
-    - jupyter-packaging
     - packaging
-  run:
+    - pip
     - python >=3.6
-    - jupyter_core
-    - jupyterlab_server >=2.0.0,<3.0.0
-    - jupyter_server >=1.1.0,<2.0.0
-    - nbclassic >=0.2.0,<0.3.0
-    - tornado >=6.1
+    - wheel
+  run:
+    - ipython
     - jinja2 >=2.10
+    - jupyter_core
+    - jupyter_server >=1.1.0,<2.0.0
+    - jupyterlab_server >=2.0.0,<3.0.0
+    - nbclassic >=0.2.0,<0.3.0
     - packaging
+    - python >=3.6
+    - tornado >=6.1.0
 
 test:
   requires:
     - nodejs >=12
+    - pip
   imports:
     - jupyterlab
   commands:
+    - pip check
     - jupyter lab --version
     - jlpm --version
     - jlpm versions
@@ -76,3 +77,4 @@ extra:
     - afshin
     - ellisonbg
     - jtpio
+    - bollwyvl
