@@ -1,8 +1,11 @@
 cdt_name:
 - cos6
 channel_sources:
-- conda-forge,defaults
+- conda-forge/label/jupyterlab_server_rc,conda-forge,defaults
 channel_targets:
-- conda-forge main
+- conda-forge jupyterlab_rc
 docker_image:
-- condaforge/linux-anvil-comp7
+- quay.io/condaforge/linux-anvil-comp7
+zip_keys:
+- - cdt_name
+  - docker_image
