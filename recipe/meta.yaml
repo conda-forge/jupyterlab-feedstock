@@ -1,4 +1,4 @@
-{% set version = "3.0.7" %}
+{% set version = "3.0.8" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 1d531765932f95bf756c088867714efe75bd906e332c0375178f1d905d0ccccf
+  sha256: e2250dec8042bb824d9dd5381f38b2b34eff7f93bed693bd486b252abafddcbe
 build:
   noarch: python
   number: 0
@@ -29,17 +29,17 @@ requirements:
     - ipython
     - jinja2 >=2.10
     - jupyter_core
-    - jupyter_server >=1.1.0,<2.0.0
-    - jupyterlab_server >=2.0.0,<3.0.0
-    - nbclassic >=0.2.0,<0.3.0
+    - jupyter_server >=1.2,<2
+    - jupyterlab_server >=2,<3
+    - nbclassic >=0.2,<1
     - packaging
     - python >=3.6
-    - tornado >=6.1.0
-
+    - tornado >=6.1
 test:
   requires:
     - nodejs >=12
     - pip
+    - m2-grep  # [win]
   imports:
     - jupyterlab
   commands:
@@ -49,9 +49,15 @@ test:
     - jlpm versions
     - jupyter labextension list
     - jupyter lab path
+    - jupyter server extension list
+    - jupyter serverextension list
+    - jupyter server extension list 1>server_extensions 2>&1
+    - cat server_extensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
+    - jupyter serverextension list 1>serverextensions 2>&1
+    - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
     - jupyter lab build
     - jupyter lab clean
-
+    
 about:
   home: https://github.com/jupyterlab/jupyterlab
   license: BSD-3-Clause
