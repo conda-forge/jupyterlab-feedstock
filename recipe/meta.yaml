@@ -39,6 +39,7 @@ test:
   requires:
     - nodejs >=12
     - pip
+    - m2-grep  # [win]
   imports:
     - jupyterlab
   commands:
@@ -48,11 +49,15 @@ test:
     - jlpm versions
     - jupyter labextension list
     - jupyter lab path
+    - jupyter server extension list
+    - jupyter serverextension list
+    - jupyter server extension list 1>server_extensions 2>&1
+    - cat server_extensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
+    - jupyter serverextension list 1>serverextensions 2>&1
+    - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
     - jupyter lab build
     - jupyter lab clean
-    - jupyter serverextension list
-    - jupyter server extension list
-
+    
 about:
   home: https://github.com/jupyterlab/jupyterlab
   license: BSD-3-Clause
