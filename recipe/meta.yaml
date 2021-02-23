@@ -38,7 +38,7 @@ requirements:
     - tornado >=6.1
 test:
   requires:
-    - nodejs >=12
+    - nodejs >=12,!=13.*,!=15.*,!=17.*
     - pip
     - m2-grep  # [win]
   imports:
