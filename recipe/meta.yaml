@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - jupyter-packaging >=0.7.3,<0.8.0
-    - nodejs >=12,!=13,!=15,!=17
+    - nodejs >=12,!=13.*,!=15.*,!=17.*
     - packaging
     - pip
     - python >=3.6
@@ -29,7 +29,7 @@ requirements:
     - ipython
     - jinja2 >=2.10
     - jupyter_core
-    - jupyter_packaging >=0.7.3,<0.8.0
+    - jupyter-packaging >=0.7.3,<0.8.0
     - jupyter_server >=1.4,<2
     - jupyterlab_server >=2.3,<3
     - nbclassic >=0.2,<1
