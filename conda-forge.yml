@@ -14,3 +14,5 @@ bot:
   # to the default branch
   abi_migration_branches:
     - 2.x
+    - rc
+    - rc-2.x
