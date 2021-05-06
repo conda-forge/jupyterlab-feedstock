@@ -9,7 +9,7 @@ source:
   sha256: 713a84991dfcca8c0bc260911f1bd54ac25a386a86285713b9555a60f795059b
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
