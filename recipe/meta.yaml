@@ -1,4 +1,4 @@
-{% set version = "3.1.0a10" %}
+{% set version = "3.1.0a11" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 95cc7769e7c1f9fbfba519c6bb18adb55a47ef87a97231eefc280f557f990a0d
+  sha256: a5ce6d20c4b56fd6f94928910c33cc13e2d53f6a56f7ccc954c685343d5a69c1
 build:
   noarch: python
   number: 0
@@ -48,6 +48,7 @@ test:
     - jlpm --version
     - jlpm versions
     - jupyter labextension list
+    - jupyter lab licenses
     - jupyter lab path
     - jupyter server extension list
     - jupyter serverextension list
@@ -62,7 +63,9 @@ about:
   home: https://github.com/jupyterlab/jupyterlab
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - jupyterlab/static/third-party-licenses.json
   summary: >
     An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Architecture.
   doc_url: https://jupyterlab.readthedocs.io
