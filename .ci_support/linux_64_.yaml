@@ -3,7 +3,7 @@ cdt_name:
 channel_sources:
 - conda-forge,defaults
 channel_targets:
-- conda-forge jupyterlab_alpha
+- conda-forge jupyterlab_beta
 docker_image:
 - quay.io/condaforge/linux-anvil-comp7
 zip_keys:
