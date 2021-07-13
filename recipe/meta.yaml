@@ -1,15 +1,12 @@
-{% set version = "3.0.0" %}
-{% set sha256 = "15228dff3f77b0bca795fd232cb25f02121510cec83f1d25856b3bc8e585b087" %}
-
+{% set version = "3.1.0rc1" %}
 
 package:
   name: jupyterlab
   version: {{ version }}
 
 source:
-  fn: jupyterlab-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 91def289d3b8aa4bb04c7cb1316fc6aef60bafdf1ed6619e1e4535cf0fbfe630
 build:
   noarch: python
   number: 0
@@ -22,32 +19,42 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - jupyter-packaging >=0.9,<1
+    - packaging
     - pip
-    - nodejs >=12
-    - jupyter-packaging
-    - packaging
-  run:
     - python >=3.6
-    - jupyter_core
-    - jupyterlab_server >=2.0.0,<3.0.0
-    - jupyter_server >=1.1.0,<2.0.0
-    - nbclassic >=0.2.0,<0.3.0
-    - tornado >=6.1
+  run:
+    - ipython
     - jinja2 >=2.10
+    - jupyter_core
+    - jupyter_server >=1.4,<2
+    - jupyterlab_server >=2.3,<3
+    - nbclassic >=0.2,<1
     - packaging
+    - python >=3.6
+    - tornado >=6.1
 
 test:
   requires:
-    - nodejs >=12
+    - nodejs >=14,<15
+    - pip
+    - m2-grep  # [win]
   imports:
     - jupyterlab
   commands:
+    - pip check
     - jupyter lab --version
     - jlpm --version
     - jlpm versions
     - jupyter labextension list
+    - jupyter lab licenses
     - jupyter lab path
+    - jupyter server extension list
+    - jupyter serverextension list
+    - jupyter server extension list 1>server_extensions 2>&1
+    - cat server_extensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
+    - jupyter serverextension list 1>serverextensions 2>&1
+    - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
     - jupyter lab build
     - jupyter lab clean
 
@@ -55,17 +62,17 @@ about:
   home: https://github.com/jupyterlab/jupyterlab
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - jupyterlab/static/third-party-licenses.json
   summary: >
     An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Architecture.
   doc_url: https://jupyterlab.readthedocs.io
   dev_url: https://github.com/jupyterlab/jupyterlab
   description: >
-    JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal,
-    text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
+    JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
 
-    JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension`
-    to find extensions. To learn more about extensions, see our user documentation.
+    JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation.
 
     JupyterLab is suitable for general usage. For JupyterLab extension developers, the extension APIs will continue to evolve.
 
@@ -78,3 +85,4 @@ extra:
     - afshin
     - ellisonbg
     - jtpio
+    - bollwyvl
