@@ -1,3 +1,0 @@
-provider:
-  win: azure
-conda_forge_output_validation: true
