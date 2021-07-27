@@ -1,4 +1,4 @@
-{% set version = "3.0.16" %}
+{% set version = "3.1.0" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 7ad4fbe1f6d38255869410fd151a8b15692a663ca97c0a8146b3f5c40e275c23
+  sha256: 5a020e5940ef32a9e6e1a43f7c794f542869576a30c5083799c7d97df34e9cf3
 build:
   noarch: python
   number: 0
@@ -19,12 +19,10 @@ build:
 
 requirements:
   host:
-    - jupyter-packaging >=0.7,<1
-    - nodejs >=12,!=13.*,!=15.*,!=17.*
+    - jupyter-packaging >=0.9,<1
     - packaging
     - pip
     - python >=3.6
-    - wheel
   run:
     - ipython
     - jinja2 >=2.10
@@ -35,9 +33,10 @@ requirements:
     - packaging
     - python >=3.6
     - tornado >=6.1
+
 test:
   requires:
-    - nodejs >=12,!=13.*,!=15.*,!=17.*
+    - nodejs >=14,<15
     - pip
     - m2-grep  # [win]
   imports:
@@ -48,6 +47,7 @@ test:
     - jlpm --version
     - jlpm versions
     - jupyter labextension list
+    - jupyter lab licenses
     - jupyter lab path
     - jupyter server extension list
     - jupyter serverextension list
@@ -62,7 +62,9 @@ about:
   home: https://github.com/jupyterlab/jupyterlab
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - jupyterlab/static/third-party-licenses.json
   summary: >
     An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Architecture.
   doc_url: https://jupyterlab.readthedocs.io
