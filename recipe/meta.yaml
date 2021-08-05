@@ -1,16 +1,13 @@
-
-{% set version = "1.2.16" %}
-{% set sha256 = "9f0275bc2034c9c69945f7ea7ce6375ffaab4e1a6f03b04acebd3a8625f18186" %}
-
+{% set version = "1.2.21" %}
 
 package:
   name: jupyterlab
   version: {{ version }}
 
 source:
-    fn: jupyterlab-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-    sha256: {{ sha256 }}
+    sha256: b07b19b7947dbe8b1cca1112223d236823fc9e1151beeac7ac8d0b74ed2ee5ee
+
 build:
   noarch: python
   number: 0
@@ -25,13 +22,13 @@ requirements:
   host:
     - python >=3.5
     - pip
-    - nodejs >=8
   run:
     - python >=3.5
     - jupyterlab_server >=1.0.0,<2.0.0
     - notebook >=4.3.1
     - tornado !=6.0.0,!=6.0.1,!=6.0.2
     - jinja2 >=2.10
+
 test:
   requires:
     - nodejs
