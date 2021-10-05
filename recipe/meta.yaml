@@ -58,9 +58,8 @@ test:
     - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
     - jupyter lab build
     - jupyter lab clean
-    - jupyter labextension --debug --no-build install @jupyter-widgets/jupyterlab-manager
-    - jupyter labextension --debug build
-    - jupyter labextension uninstall @jupyter-widgets/jupyterlab-manager
+    - jupyter labextension install --debug @jupyter-widgets/jupyterlab-manager
+    - jupyter labextension uninstall --debug @jupyter-widgets/jupyterlab-manager
 
 about:
   home: https://github.com/jupyterlab/jupyterlab
