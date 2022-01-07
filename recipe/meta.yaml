@@ -37,7 +37,7 @@ requirements:
 
 test:
   requires:
-    - nodejs >=14,<15
+    - nodejs >=14,!=15,<17
     - pip
     - m2-grep  # [win]
   imports:
@@ -56,7 +56,7 @@ test:
     - cat server_extensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
     - jupyter serverextension list 1>serverextensions 2>&1
     - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
-    - jupyter lab build
+    - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
 
 about:
