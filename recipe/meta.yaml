@@ -37,7 +37,7 @@ requirements:
 
 test:
   requires:
-    - nodejs >=14,!=15,<17
+    - nodejs >=14,!=15.*,<17
     - pip
     - m2-grep  # [win]
   imports:
