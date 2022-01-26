@@ -1,18 +1,6 @@
-provider:
-  win: azure
-
 conda_forge_output_validation: true
 
 azure:
   # toggle for storing the conda build_artifacts directory (including the
   # built packages) as an Azure pipeline artifact that can be downloaded
   store_build_artifacts: true
-
-
-bot:
-  # any branches listed in this section will get bot migration PRs in addition
-  # to the default branch
-  abi_migration_branches:
-  - 2.x
-  - rc
-  - rc-2.x

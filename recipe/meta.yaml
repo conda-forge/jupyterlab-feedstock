@@ -1,4 +1,4 @@
-{% set version = "3.1.0a11" %}
+{% set version = "3.3.0a2" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,8 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: a5ce6d20c4b56fd6f94928910c33cc13e2d53f6a56f7ccc954c685343d5a69c1
+  sha256: 63bbc73e8b83dc62b96f7d679dccf76b5c19a9607e8bff3d61b93ac7f8fac997
+
 build:
   noarch: python
   number: 0
@@ -19,25 +20,24 @@ build:
 
 requirements:
   host:
-    - jupyter-packaging >=0.7,<1
-    - nodejs >=12,!=13.*,!=15.*,!=17.*
+    - jupyter-packaging >=0.9,<1
     - packaging
     - pip
     - python >=3.6
-    - wheel
   run:
     - ipython
     - jinja2 >=2.10
     - jupyter_core
     - jupyter_server >=1.4,<2
-    - jupyterlab_server >=2.3,<3
+    - jupyterlab_server >=2.10,<3
     - nbclassic >=0.2,<1
     - packaging
     - python >=3.6
-    - tornado >=6.1
+    - tornado >=6.1.0
+
 test:
   requires:
-    - nodejs >=12,!=13.*,!=15.*,!=17.*
+    - nodejs >=14,!=15.*,<17
     - pip
     - m2-grep  # [win]
   imports:
@@ -56,7 +56,7 @@ test:
     - cat server_extensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
     - jupyter serverextension list 1>serverextensions 2>&1
     - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
-    - jupyter lab build
+    - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
 
 about:
