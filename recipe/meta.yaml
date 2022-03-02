@@ -1,4 +1,4 @@
-{% set version = "3.2.9" %}
+{% set version = "3.3.0" %}
 
 package:
   name: jupyterlab
@@ -29,11 +29,11 @@ requirements:
     - jinja2 >=2.10
     - jupyter_core
     - jupyter_server >=1.4,<2
-    - jupyterlab_server >=2.3,<3
+    - jupyterlab_server >=2.10,<3
     - nbclassic >=0.2,<1
     - packaging
     - python >=3.6
-    - tornado >=6.1
+    - tornado >=6.1.0
 
 test:
   requires:
