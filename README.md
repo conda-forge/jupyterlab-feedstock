@@ -5,7 +5,7 @@ Home: https://github.com/jupyterlab/jupyterlab
 
 Package license: BSD-3-Clause
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab-feedstock/blob/main/LICENSE.txt)
 
 Summary: An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Architecture.
 
@@ -25,8 +25,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=498&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/jupyterlab-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=498&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/jupyterlab-feedstock?branchName=main">
       </a>
     </td>
   </tr>
