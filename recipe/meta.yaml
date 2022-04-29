@@ -1,4 +1,4 @@
-{% set version = "3.3.0rc0" %}
+{% set version = "3.4.0rc0" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: e42dc447bd0d58fe884d250a5085f540a9d5b6fea689ab4a13e6dc918bda544b
+  sha256: dedcd45c083fb8637884f86ea54f4226439e26a3140ff9b3c69961cff9fa99ce
 
 build:
   noarch: python
@@ -28,11 +28,11 @@ requirements:
     - ipython
     - jinja2 >=2.10
     - jupyter_core
-    - jupyter_server >=1.4,<2
+    - jupyter_server >=1.16,<2
     - jupyterlab_server >=2.10,<3
     - nbclassic >=0.2,<1
     - packaging
-    - python >=3.6
+    - python >=3.7
     - tornado >=6.1.0
 
 test:
