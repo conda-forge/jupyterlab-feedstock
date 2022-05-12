@@ -23,6 +23,7 @@ requirements:
     - jupyter-packaging >=0.9,<1
     - packaging
     - pip
+    - pre-commit
     - python >=3.7
   run:
     - ipython
