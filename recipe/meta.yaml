@@ -81,11 +81,12 @@ about:
 
 extra:
   recipe-maintainers:
-    - jasongrout
-    - blink1073
-    - jochym
-    - ian-r-rose
     - afshin
-    - ellisonbg
-    - jtpio
+    - blink1073
     - bollwyvl
+    - ellisonbg
+    - fcollonval
+    - ian-r-rose
+    - jasongrout
+    - jochym
+    - jtpio
