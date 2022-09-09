@@ -24,7 +24,6 @@ requirements:
     - hatch-jupyter-builder >=0.3.2
     - hatchling >=1.2.0
     - pip
-    - pre-commit
     - python >=3.7
   run:
     - async-lru >=1.0.0
