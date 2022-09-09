@@ -61,11 +61,8 @@ test:
     - jupyter lab licenses
     - jupyter lab path
     - jupyter server extension list
-    - jupyter serverextension list
     - jupyter server extension list 1>server_extensions 2>&1
     - cat server_extensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
-    - jupyter serverextension list 1>serverextensions 2>&1
-    - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
     - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
 
