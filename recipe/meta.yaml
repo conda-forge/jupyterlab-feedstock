@@ -1,4 +1,4 @@
-{% set version = "3.4.6" %}
+{% set version = "3.4.7" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: e3599c8bc74cee064115f96e388cd27a2a7251b1dc02f4ad1bf8a7ff5270f179
+  sha256: d3adb33f
 
 build:
   noarch: python
@@ -35,6 +35,7 @@ requirements:
     - notebook <7
     - packaging
     - python >=3.7
+    - tomli
     - tornado >=6.1.0
 
 test:
