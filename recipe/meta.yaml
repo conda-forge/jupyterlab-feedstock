@@ -1,4 +1,4 @@
-{% set version = "3.4.7" %}
+{% set version = "3.4.8" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 4dc48ab0980e3af2e921dff26e0013dd03b104b1b67f0d85b67448e16e25311e
+  sha256: 1fafb8b657005d91603f3c3adfd6d9e8eaf33fdc601537fef09283332efe67cb
 
 build:
   noarch: python
@@ -20,10 +20,9 @@ build:
 
 requirements:
   host:
-    - jupyter-packaging >=0.9,<1
+    - jupyter-packaging >=0.9,<2
     - packaging
     - pip
-    - pre-commit
     - python >=3.7
   run:
     - ipython
@@ -40,7 +39,7 @@ requirements:
 
 test:
   requires:
-    - nodejs >=14,!=15.*,<17
+    - nodejs >=14,!=15.*,!=17.*,<19
     - pip
     - m2-grep  # [win]
   imports:
