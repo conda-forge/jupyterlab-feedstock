@@ -4,3 +4,5 @@ azure:
   # toggle for storing the conda build_artifacts directory (including the
   # built packages) as an Azure pipeline artifact that can be downloaded
   store_build_artifacts: true
+conda_build:
+  pkg_format: '2'
