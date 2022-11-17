@@ -16,3 +16,5 @@ bot:
   - 2.x
   - rc
   - rc-2.x
+conda_build:
+  pkg_format: '2'
