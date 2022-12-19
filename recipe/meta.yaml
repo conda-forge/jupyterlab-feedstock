@@ -1,4 +1,4 @@
-{% set version = "3.4.0b0" %}
+{% set version = "3.6.0b0" %}
 
 package:
   name: jupyterlab
@@ -20,24 +20,27 @@ build:
 
 requirements:
   host:
-    - jupyter-packaging >=0.9,<1
+    - jupyter-packaging >=0.9,<2
     - packaging
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
     - ipython
-    - jinja2 >=2.10
+    - jinja2 >=2.1
     - jupyter_core
-    - jupyter_server >=1.16,<2
+    - jupyter_server_ydoc >=0.6.0,<0.7.0
+    - jupyter_server >=1.16.0,<3
     - jupyterlab_server >=2.10,<3
-    - nbclassic >=0.2,<1
+    - nbclassic
+    - notebook <7
     - packaging
+    - tomli
     - python >=3.7
     - tornado >=6.1.0
 
 test:
   requires:
-    - nodejs >=14,!=15.*,<17
+    - nodejs >=16.*,!=17.*,<19
     - pip
     - m2-grep  # [win]
   imports:
