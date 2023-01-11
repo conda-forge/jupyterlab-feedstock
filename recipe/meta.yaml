@@ -1,4 +1,4 @@
-{% set version = "3.4.0rc0" %}
+{% set version = "3.6.0rc0" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: dedcd45c083fb8637884f86ea54f4226439e26a3140ff9b3c69961cff9fa99ce
+  sha256: 89b6ec4d10489978ada77fe575d0bd885a7cde829b15e3b3962e213faff2aa0a
 
 build:
   noarch: python
@@ -20,24 +20,27 @@ build:
 
 requirements:
   host:
-    - jupyter-packaging >=0.9,<1
+    - jupyter-packaging >=0.9,<2
     - packaging
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
     - ipython
-    - jinja2 >=2.10
+    - jinja2 >=2.1
     - jupyter_core
-    - jupyter_server >=1.16,<2
+    - jupyter_server_ydoc >=0.6.0,<0.7.0
+    - jupyter_server >=1.16.0,<3
     - jupyterlab_server >=2.10,<3
-    - nbclassic >=0.2,<1
+    - nbclassic
+    - notebook <7
     - packaging
+    - tomli
     - python >=3.7
     - tornado >=6.1.0
 
 test:
   requires:
-    - nodejs >=14,!=15.*,<17
+    - nodejs >=16.*,!=17.*,<19
     - pip
     - m2-grep  # [win]
   imports:
@@ -72,11 +75,8 @@ about:
   dev_url: https://github.com/jupyterlab/jupyterlab
   description: >
     JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
-
     JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation.
-
     JupyterLab is suitable for general usage. For JupyterLab extension developers, the extension APIs will continue to evolve.
-
 extra:
   recipe-maintainers:
     - jasongrout
