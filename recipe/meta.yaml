@@ -80,12 +80,12 @@ about:
     JupyterLab is suitable for general usage. For JupyterLab extension developers, the extension APIs will continue to evolve.
 extra:
   recipe-maintainers:
-    - jasongrout
-    - blink1073
-    - jochym
-    - ian-r-rose
     - afshin
-    - ellisonbg
-    - jtpio
+    - blink1073
     - bollwyvl
+    - ellisonbg
     - fcollonval
+    - ian-r-rose
+    - jasongrout
+    - jochym
+    - jtpio
