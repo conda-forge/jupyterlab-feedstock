@@ -13,10 +13,10 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
   entry_points:
+    - jlpm = jupyterlab.jlpmapp:main
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
     - jupyter-labhub = jupyterlab.labhubapp:main
-    - jlpm = jupyterlab.jlpmapp:main
 
 requirements:
   host:
@@ -28,15 +28,15 @@ requirements:
     - ipython
     - jinja2 >=2.1
     - jupyter_core
-    - jupyter_server_ydoc >=0.6.0,<0.7.0
     - jupyter_server >=1.16.0,<3
-    - jupyterlab_server >=2.19,<3
+    - jupyter_server_ydoc >=0.6.0,<0.7.0
     - jupyter_ydoc >=0.2.2,<0.3
+    - jupyterlab_server >=2.19,<3
     - nbclassic
     - notebook <7
     - packaging
-    - tomli
     - python >=3.7
+    - tomli
     - tornado >=6.1.0
 
 test:
