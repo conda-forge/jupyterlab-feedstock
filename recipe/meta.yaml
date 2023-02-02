@@ -1,4 +1,4 @@
-{% set version = "3.5.3" %}
+{% set version = "3.6.0" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 51e889448ae194eeef8e50f63f5c4f487f728f477befe436e9749672f7511dbe
+  sha256: 536bce7d8d6caf094e63d81d2b05097ca133b89f41d057def68b688da26d8138
 
 build:
   noarch: python
@@ -26,20 +26,22 @@ requirements:
     - python >=3.7
   run:
     - ipython
-    - jinja2 >=2.10
+    - jinja2 >=2.1
     - jupyter_core
-    - jupyter_server >=1.16,<3
-    - jupyterlab_server >=2.10,<3
+    - jupyter_server_ydoc >=0.6.0,<0.7.0
+    - jupyter_server >=1.16.0,<3
+    - jupyterlab_server >=2.19,<3
+    - jupyter_ydoc >=0.2.2,<0.3
     - nbclassic
     - notebook <7
     - packaging
-    - python >=3.7
     - tomli
+    - python >=3.7
     - tornado >=6.1.0
 
 test:
   requires:
-    - nodejs >=14,!=15.*,!=17.*,<19
+    - nodejs >=16.*,!=17.*,<19
     - pip
     - m2-grep  # [win]
   imports:
@@ -74,19 +76,15 @@ about:
   dev_url: https://github.com/jupyterlab/jupyterlab
   description: >
     JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
-
     JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation.
-
     JupyterLab is suitable for general usage. For JupyterLab extension developers, the extension APIs will continue to evolve.
-
 extra:
   recipe-maintainers:
-    - afshin
-    - blink1073
-    - bollwyvl
-    - ellisonbg
-    - fcollonval
-    - ian-r-rose
     - jasongrout
+    - blink1073
     - jochym
+    - ian-r-rose
+    - afshin
+    - ellisonbg
     - jtpio
+    - bollwyvl
