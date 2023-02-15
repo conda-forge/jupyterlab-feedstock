@@ -1,4 +1,2 @@
 channel_targets:
   - conda-forge jupyterlab_alpha
-channel_sources:
-  - conda-forge/label/jupyter_server_rc,conda-forge
