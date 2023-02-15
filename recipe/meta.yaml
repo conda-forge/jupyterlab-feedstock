@@ -11,7 +11,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
