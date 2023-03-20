@@ -1,4 +1,4 @@
-{% set version = "3.6.1" %}
+{% set version = "3.6.2" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: aee98c174180e98a30470297d10b959e8e64f2288970c0de65f0a6d2b4807034
+  sha256: e55bc40c36c2a52b76cf301138507a5488eb769137dd39d9f31a6259a00c6b03
 
 build:
   noarch: python
@@ -76,8 +76,8 @@ about:
   dev_url: https://github.com/jupyterlab/jupyterlab
   description: >
     JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
-    JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation.
-    JupyterLab is suitable for general usage. For JupyterLab extension developers, the extension APIs will continue to evolve.
+    JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation. JupyterLab is suitable for general usage. For JupyterLab extension developers,
+    the extension APIs will continue to evolve.
 extra:
   recipe-maintainers:
     - afshin
