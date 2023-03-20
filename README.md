@@ -1,11 +1,11 @@
-About jupyterlab
-================
+About jupyterlab-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/jupyterlab/jupyterlab
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlab-feedstock/blob/main/LICENSE.txt)
 
 Summary: An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Architecture.
 
