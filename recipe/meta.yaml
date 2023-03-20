@@ -29,8 +29,8 @@ requirements:
     - jinja2 >=2.1
     - jupyter_core
     - jupyter_server >=1.16.0,<3
-    - jupyter_server_ydoc >=0.6.0,<0.7.0
-    - jupyter_ydoc >=0.2.2,<0.3
+    - jupyter_server_ydoc >=0.8.0,<0.9.0
+    - jupyter_ydoc >=0.2.3,<0.3
     - jupyterlab_server >=2.19,<3
     - nbclassic
     - notebook <7
