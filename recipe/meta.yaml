@@ -53,7 +53,8 @@ test:
     - pip check
     - jupyter lab --version
     - jlpm --version
-    - jlpm versions
+    # TODO: figure out a handy command for yarn 3.4+ that emulates the previous version lister
+    # - jlpm versions
     - jupyter labextension list
     - jupyter lab licenses
     - jupyter lab path
