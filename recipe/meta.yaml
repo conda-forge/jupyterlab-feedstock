@@ -1,4 +1,4 @@
-{% set version = "4.0.0a36" %}
+{% set version = "4.0.0a37" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 7cba6f8cb545d8523febe638f057b26bcc506ce34e8856512eba7e35955f8ff2
+  sha256: b4ad7e43a63da514f3a7453bd0d34f8bdd2fc82f12bd7ea66d4fac4ddad7a81c
 
 build:
   noarch: python
@@ -53,7 +53,8 @@ test:
     - pip check
     - jupyter lab --version
     - jlpm --version
-    - jlpm versions
+    # TODO: figure out a handy command for yarn 3.4+ that emulates the previous version lister
+    # - jlpm versions
     - jupyter labextension list
     - jupyter lab licenses
     - jupyter lab path
