@@ -1,4 +1,4 @@
-{% set version = "3.6.3" %}
+{% set version = "4.0.0" %}
 
 package:
   name: jupyterlab
@@ -6,42 +6,45 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 373e9cfb8a72edd294be14f16662563a220cecf0fb26de7aab1af9a29b689b82
+  sha256: ce656d04828b2e4ee0758e22c862cc99aedec66a10319d09f0fd5ea51be68dd8
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
-    - jlpm = jupyterlab.jlpmapp:main
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
     - jupyter-labhub = jupyterlab.labhubapp:main
+    - jlpm = jupyterlab.jlpmapp:main
 
 requirements:
   host:
-    - jupyter-packaging >=0.9,<2
-    - packaging
+    - build
+    - hatch-jupyter-builder >=0.3.2
+    - hatchling >=1.5.0
     - pip
-    - python >=3.7
+    - python >=3.8
   run:
-    - ipython
-    - jinja2 >=2.1
+    - async-lru >=1.0.0
+    - importlib_metadata >=4.8.3
+    - importlib_resources >=1.4
+    - ipykernel
+    - jinja2 >=3.0.3
     - jupyter_core
-    - jupyter_server >=1.16.0,<3
-    - jupyter_server_ydoc >=0.8.0,<0.9.0
-    - jupyter_ydoc >=0.2.3,<0.3
-    - jupyterlab_server >=2.19,<3
-    - nbclassic
-    - notebook <7
+    - jupyter-lsp >=2.0.0
+    - jupyter_server >=2.4.0,<3
+    - jupyterlab_server >=2.19.0,<3
+    - notebook-shim >=0.2
     - packaging
-    - python >=3.7
+    - python >=3.8
+    - traitlets
+    - tornado >=6.2.0
     - tomli
-    - tornado >=6.1.0
 
 test:
   requires:
-    - nodejs >=16.*,!=17.*,<19
+    - nodejs >=18,<19
     - pip
     - m2-grep  # [win]
   imports:
@@ -50,16 +53,14 @@ test:
     - pip check
     - jupyter lab --version
     - jlpm --version
-    - jlpm versions
+    # TODO: figure out a handy command for yarn 3.4+ that emulates the previous version lister
+    # - jlpm versions
     - jupyter labextension list
     - jupyter lab licenses
     - jupyter lab path
     - jupyter server extension list
-    - jupyter serverextension list
     - jupyter server extension list 1>server_extensions 2>&1
-    - cat server_extensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
-    - jupyter serverextension list 1>serverextensions 2>&1
-    - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
+    - grep -iE "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK" server_extensions
     - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
 
@@ -76,8 +77,11 @@ about:
   dev_url: https://github.com/jupyterlab/jupyterlab
   description: >
     JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
-    JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation. JupyterLab is suitable for general usage. For JupyterLab extension developers,
-    the extension APIs will continue to evolve.
+
+    JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation.
+
+    JupyterLab is suitable for general usage. For JupyterLab extension developers, the extension APIs will continue to evolve.
+
 extra:
   recipe-maintainers:
     - afshin
