@@ -10,7 +10,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
@@ -20,7 +20,7 @@ build:
 
 requirements:
   host:
-    - build
+    - python-build
     - hatch-jupyter-builder >=0.3.2
     - hatchling >=1.5.0
     - pip
