@@ -11,7 +11,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - jlpm = jupyterlab.jlpmapp:main
     - jupyter-lab = jupyterlab.labapp:main
