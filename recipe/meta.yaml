@@ -1,4 +1,4 @@
-{% set version = "3.6.3" %}
+{% set version = "3.6.4" %}
 
 package:
   name: jupyterlab
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 373e9cfb8a72edd294be14f16662563a220cecf0fb26de7aab1af9a29b689b82
+  sha256: 862fb4a06c759a9b0a12de6bf434a8681a42e52fff0593c120e3fbad6847889f
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - jlpm = jupyterlab.jlpmapp:main
     - jupyter-lab = jupyterlab.labapp:main
@@ -30,7 +30,7 @@ requirements:
     - jupyter_core
     - jupyter_server >=1.16.0,<3
     - jupyter_server_ydoc >=0.8.0,<0.9.0
-    - jupyter_ydoc >=0.2.3,<0.3
+    - jupyter_ydoc >=0.2.4,<0.3
     - jupyterlab_server >=2.19,<3
     - nbclassic
     - notebook <7
