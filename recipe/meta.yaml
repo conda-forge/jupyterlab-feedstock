@@ -18,12 +18,6 @@ build:
     - jupyter-labhub = jupyterlab.labhubapp:main
     - jlpm = jupyterlab.jlpmapp:main
 
-app:
-  entry: jupyter lab
-  icon: icon.png
-  summary: JupyterLab {{ version }}
-  type: desk
-
 requirements:
   host:
     - python-build
@@ -69,6 +63,12 @@ test:
     - grep -iE "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK" server_extensions
     - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
+
+app:
+  entry: jupyter lab
+  icon: icon.png
+  summary: JupyterLab {{ version }}
+  type: desk
 
 about:
   home: https://github.com/jupyterlab/jupyterlab
