@@ -42,14 +42,14 @@ Current release info
 Installing jupyterlab
 =====================
 
-Installing `jupyterlab` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `jupyterlab` from the `conda-forge/label/jupyterlab_alpha` channel can be achieved by adding `conda-forge/label/jupyterlab_alpha` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/jupyterlab_alpha
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `jupyterlab` can be installed with `conda`:
+Once the `conda-forge/label/jupyterlab_alpha` channel has been enabled, `jupyterlab` can be installed with `conda`:
 
 ```
 conda install jupyterlab
@@ -64,26 +64,26 @@ mamba install jupyterlab
 It is possible to list all of the versions of `jupyterlab` available on your platform with `conda`:
 
 ```
-conda search jupyterlab --channel conda-forge
+conda search jupyterlab --channel conda-forge/label/jupyterlab_alpha
 ```
 
 or with `mamba`:
 
 ```
-mamba search jupyterlab --channel conda-forge
+mamba search jupyterlab --channel conda-forge/label/jupyterlab_alpha
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search jupyterlab --channel conda-forge
+mamba repoquery search jupyterlab --channel conda-forge/label/jupyterlab_alpha
 
 # List packages depending on `jupyterlab`:
-mamba repoquery whoneeds jupyterlab --channel conda-forge
+mamba repoquery whoneeds jupyterlab --channel conda-forge/label/jupyterlab_alpha
 
 # List dependencies of `jupyterlab`:
-mamba repoquery depends jupyterlab --channel conda-forge
+mamba repoquery depends jupyterlab --channel conda-forge/label/jupyterlab_alpha
 ```
 
 
@@ -105,7 +105,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
