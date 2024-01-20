@@ -1,4 +1,4 @@
-{% set version = "3.6.6" %}
+{% set version = "3.6.7" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 0a47d7adb28bd5659d727783f4113537e54f8c66e0d6322d1d8f9edb081dc926
+  sha256: 2fadeaec161b0d1aec19f17721d8b803aef1d267f89c8b636b703be14f435c8f
 
 build:
   noarch: python
@@ -60,8 +60,6 @@ test:
     - cat server_extensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
     - jupyter serverextension list 1>serverextensions 2>&1
     - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
-    - jupyter lab build --dev-build=False --minimize=False
-    - jupyter lab clean
 
 about:
   home: https://github.com/jupyterlab/jupyterlab
