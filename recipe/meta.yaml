@@ -1,4 +1,4 @@
-{% set version = "4.0.6" %}
+{% set version = "4.0.11" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 6c43ae5a6a1fd2fdfafcb3454004958bde6da76331abb44cffc6f9e436b19ba1
+  sha256: d1aec24712566bc25a36229788242778e498ca4088028e2f9aa156b8b7fdc8fc
 
 build:
   noarch: python
@@ -90,6 +90,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - krassowski
     - afshin
     - blink1073
     - bollwyvl
