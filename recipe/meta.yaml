@@ -10,7 +10,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
@@ -63,6 +63,12 @@ test:
     - grep -iE "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK" server_extensions
     - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
+
+app:
+  entry: jupyter lab
+  icon: icon.png
+  summary: JupyterLab {{ version }}
+  type: desk
 
 about:
   home: https://github.com/jupyterlab/jupyterlab
