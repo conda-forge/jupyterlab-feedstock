@@ -1,4 +1,4 @@
-{% set version = "4.1.0a4" %}
+{% set version = "4.2.0a2" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 5757ad416c49f4acbacaac8921416629970a9f2751d84dbde46e0abfa80b5a37
+  sha256: a4e842c42fa173c117ea6b12423bc377d0fafb14e6066944ccfe66afe88f413d
 
 build:
   noarch: python
@@ -22,7 +22,7 @@ requirements:
   host:
     - python-build
     - hatch-jupyter-builder >=0.3.2
-    - hatchling >=1.5.0
+    - hatchling >=1.21.1
     - pip
     - python >=3.8
   run:
@@ -40,8 +40,8 @@ requirements:
     - packaging
     - python >=3.8
     - tomli
-    - tornado >=6.2.0
     - traitlets
+    - tornado >=6.2.0
 
 test:
   requires:
@@ -65,6 +65,12 @@ test:
     - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
 
+app:
+  entry: jupyter lab
+  icon: icon.png
+  summary: JupyterLab {{ version }}
+  type: desk
+
 about:
   home: https://github.com/jupyterlab/jupyterlab
   license: BSD-3-Clause
@@ -85,6 +91,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - krassowski
     - afshin
     - blink1073
     - bollwyvl
