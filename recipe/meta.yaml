@@ -7,7 +7,7 @@ package:
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
   sha256: 9f5a2ba635a5167210468a4d984d83f4a1843d7ee73a954b8c150ffdcb07c000
-
+ 
 build:
   noarch: python
   number: 1
