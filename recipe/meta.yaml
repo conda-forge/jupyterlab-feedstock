@@ -30,7 +30,7 @@ requirements:
     - httpx >=0.25.0
     - importlib_metadata >=4.8.3
     - importlib_resources >=1.4
-    - ipykernel
+    - ipykernel >=6.5.0
     - jinja2 >=3.0.3
     - jupyter_core
     - jupyter_server >=2.4.0,<3
@@ -39,9 +39,9 @@ requirements:
     - notebook-shim >=0.2
     - packaging
     - python >=3.8
-    - tomli
-    - traitlets
+    - tomli >=1.2.2
     - tornado >=6.2.0
+    - traitlets
 
 test:
   requires:
