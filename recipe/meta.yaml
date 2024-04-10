@@ -1,4 +1,4 @@
-{% set version = "4.2.0b0" %}
+{% set version = "4.2.0b1" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 9f5a2ba635a5167210468a4d984d83f4a1843d7ee73a954b8c150ffdcb07c000
+  sha256: 7b05d1cf6443677de90c4323f7f3cb027bc48771cb1176891da9712f984695b2
  
 build:
   noarch: python
