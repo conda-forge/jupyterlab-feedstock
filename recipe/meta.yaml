@@ -1,4 +1,4 @@
-{% set version = "4.2.0b1" %}
+{% set version = "4.2.0b2" %}
 
 package:
   name: jupyterlab
@@ -6,8 +6,8 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 7b05d1cf6443677de90c4323f7f3cb027bc48771cb1176891da9712f984695b2
- 
+  sha256: 22c7323e668e46087e732cacbfce5a31ee15193c35b72833dc1e956117689e8a
+
 build:
   noarch: python
   number: 0
@@ -30,7 +30,7 @@ requirements:
     - httpx >=0.25.0
     - importlib_metadata >=4.8.3
     - importlib_resources >=1.4
-    - ipykernel
+    - ipykernel >=6.5.0
     - jinja2 >=3.0.3
     - jupyter_core
     - jupyter_server >=2.4.0,<3
@@ -39,7 +39,7 @@ requirements:
     - notebook-shim >=0.2
     - packaging
     - python >=3.8
-    - tomli
+    - tomli >=1.2.2
     - traitlets
     - tornado >=6.2.0
 
