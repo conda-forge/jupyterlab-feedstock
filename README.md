@@ -162,4 +162,5 @@ Feedstock Maintainers
 * [@jasongrout](https://github.com/jasongrout/)
 * [@jochym](https://github.com/jochym/)
 * [@jtpio](https://github.com/jtpio/)
+* [@krassowski](https://github.com/krassowski/)
 
