@@ -1,4 +1,4 @@
-{% set version = "4.3.0rc3" %}
+{% set version = "4.3.0rc0" %}
 
 package:
   name: jupyterlab
