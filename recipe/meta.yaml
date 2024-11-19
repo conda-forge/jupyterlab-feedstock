@@ -1,12 +1,14 @@
-{% set version = "4.3.0a2" %}
+{% set version = "4.4.0a0" %}
+
+{% set python_min = python_min | default("3.9") %}
 
 package:
   name: jupyterlab
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 6043a84b50e008428da35ad8619b0045d1005c8833e1c76ffb15d136cf2c827a
+  url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
+  sha256: ddff121f90054b1088b080ae1d2901c5d3bb39563b9089697247a643aba38aa9
 
 build:
   noarch: python
@@ -24,12 +26,11 @@ requirements:
     - hatch-jupyter-builder >=0.3.2
     - hatchling >=1.21.1
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - async-lru >=1.0.0
     - httpx >=0.25.0
-    - importlib_metadata >=4.8.3
-    - importlib_resources >=1.4
+    - importlib-metadata >=4.8.3
     - ipykernel >=6.5.0
     - jinja2 >=3.0.3
     - jupyter_core
@@ -38,7 +39,7 @@ requirements:
     - jupyterlab_server >=2.27.1,<3
     - notebook-shim >=0.2
     - packaging
-    - python >=3.8
+    - python >={{ python_min }}
     - setuptools >=40.1.0
     - tomli >=1.2.2
     - tornado >=6.2.0
@@ -48,6 +49,7 @@ test:
   requires:
     - nodejs >=22,<23
     - pip
+    - python {{ python_min }}
     - m2-grep  # [win]
   imports:
     - jupyterlab
