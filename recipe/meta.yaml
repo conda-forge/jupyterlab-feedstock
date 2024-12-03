@@ -29,7 +29,7 @@ requirements:
     - python {{ python_min }}
   run:
     - async-lru >=1.0.0
-    - httpx >=0.25.0
+    - httpx >=0.28.0,<0.29.0
     - importlib-metadata >=4.8.3
     - ipykernel >=6.5.0
     - jinja2 >=3.0.3
@@ -40,7 +40,7 @@ requirements:
     - notebook-shim >=0.2
     - packaging
     - python >={{ python_min }}
-    - setuptools >=40.1.0
+    - setuptools >=40.8.0
     - tomli >=1.2.2
     - tornado >=6.2.0
     - traitlets
