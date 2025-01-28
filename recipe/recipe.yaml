@@ -69,7 +69,7 @@ tests:
       - jupyter lab path
       - jupyter server extension list
       - jupyter server extension list 1>server_extensions 2>&1
-      - grep -iE "jupyterlab.*{{ version | replace(".", "\\.") }}.*OK" server_extensions
+      - grep -iE "jupyterlab.*${{ version | replace(".", "\\.") }}.*OK" server_extensions
       - jupyter lab build --dev-build=False --minimize=False
       - jupyter lab clean
 
