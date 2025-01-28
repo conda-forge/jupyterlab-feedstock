@@ -1,11 +1,11 @@
-conda_forge_output_validation: true
-
 azure:
   # toggle for storing the conda build_artifacts directory (including the
   # built packages) as an Azure pipeline artifact that can be downloaded
   store_build_artifacts: true
+conda_build:
+  pkg_format: '2'
+conda_build_tool: rattler-build
+conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
-conda_build:
-  pkg_format: '2'
