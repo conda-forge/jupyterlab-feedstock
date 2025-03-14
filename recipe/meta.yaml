@@ -66,13 +66,11 @@ test:
     - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
 
-# TODO: restore after `anaconda-client` works again
-# https://github.com/conda-forge/anaconda-client-feedstock/pull/58
-# app:
-#   entry: jupyter lab
-#   icon: icon.png
-#   summary: JupyterLab {{ version }}
-#   type: desk
+app:
+  entry: jupyter lab
+  icon: icon.png
+  summary: JupyterLab {{ version }}
+  type: desk
 
 about:
   home: https://github.com/jupyterlab/jupyterlab
