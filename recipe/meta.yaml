@@ -10,8 +10,8 @@ source:
 
 build:
   noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
@@ -66,11 +66,13 @@ test:
     - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
 
-app:
-  entry: jupyter lab
-  icon: icon.png
-  summary: JupyterLab {{ version }}
-  type: desk
+# TODO: restore after `anaconda-client` works again
+# https://github.com/conda-forge/anaconda-client-feedstock/pull/58
+# app:
+#   entry: jupyter lab
+#   icon: icon.png
+#   summary: JupyterLab {{ version }}
+#   type: desk
 
 about:
   home: https://github.com/jupyterlab/jupyterlab
