@@ -1,4 +1,4 @@
-{% set version = "4.4.5" %}
+{% set version = "4.4.6" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 0bd6c18e6a3c3d91388af6540afa3d0bb0b2e76287a7b88ddf20ab41b336e595
+  sha256: e0b720ff5392846bdbc01745f32f29f4d001c071a4bff94d8b516ba89b5a4157
 
 build:
   noarch: python
@@ -28,9 +28,9 @@ requirements:
     - python-build
   run:
     - async-lru >=1.0.0
-    - httpx >=0.25.0
+    - httpx >=0.25.0,<1
     - importlib-metadata >=4.8.3
-    - ipykernel >=6.5.0
+    - ipykernel >=6.5.0,!=6.30.0
     - jinja2 >=3.0.3
     - jupyter_core
     - jupyter_server >=2.4.0,<3
