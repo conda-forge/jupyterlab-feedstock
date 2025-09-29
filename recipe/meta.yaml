@@ -1,4 +1,4 @@
-{% set version = "4.4.0b1" %}
+{% set version = "4.5.0b0" %}
 
 package:
   name: jupyterlab
@@ -6,12 +6,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: ac220095694567053b59ffed9f96556e95591d14147278ef5cd57256d51a5f71
+  sha256: dbc3f7a0515309ef9c4ddf10724777404baddb4888da07e30b328299dc33360a
 
 build:
   noarch: python
-  number: 2
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  number: 0
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
@@ -27,9 +28,9 @@ requirements:
     - python {{ python_min }}
   run:
     - async-lru >=1.0.0
-    - httpx >=0.25.0
+    - httpx >=0.25.0,<1.0.0
     - importlib-metadata >=4.8.3
-    - ipykernel >=6.5.0
+    - ipykernel >=6.5.0,!=6.30.0
     - jinja2 >=3.0.3
     - jupyter_core
     - jupyter_server >=2.4.0,<3
@@ -38,7 +39,7 @@ requirements:
     - notebook-shim >=0.2
     - packaging
     - python >={{ python_min }}
-    - setuptools >=41.1.0
+    - setuptools >=40.1.0
     - tomli >=1.2.2
     - tornado >=6.2.0
     - traitlets
