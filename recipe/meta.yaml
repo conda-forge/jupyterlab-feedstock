@@ -48,7 +48,6 @@ test:
     - nodejs >=22,<23
     - pip
     - python {{ python_min }}
-    - m2-grep  # [win]
   imports:
     - jupyterlab
   commands:
@@ -61,8 +60,7 @@ test:
     - jupyter lab licenses
     - jupyter lab path
     - jupyter server extension list
-    - jupyter server extension list 1>server_extensions 2>&1
-    - grep -iE "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK" server_extensions
+    - jupyter server extension list 2>&1 | python -c "import sys, re; ok = re.findall(r'jupyterlab.*{{ version.replace(".", "\\.") }}.*OK', sys.stdin.read()); print(ok); assert ok, 'server extension is not ok'"
     - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
 
