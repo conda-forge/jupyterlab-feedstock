@@ -1,4 +1,4 @@
-{% set version = "4.4.0b2" %}
+{% set version = "4.5.0b0" %}
 
 package:
   name: jupyterlab
@@ -6,12 +6,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 4cb814584a08bbdb1773bc9c7967af51d21a6af1bcc2b4a3574e656c4ffaba1a
+  sha256: dbc3f7a0515309ef9c4ddf10724777404baddb4888da07e30b328299dc33360a
 
 build:
   noarch: python
-  number: 2
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  number: 0
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
@@ -27,9 +28,8 @@ requirements:
     - python {{ python_min }}
   run:
     - async-lru >=1.0.0
-    - httpx >=0.25.0
-    - importlib-metadata >=4.8.3
-    - ipykernel >=6.5.0
+    - httpx >=0.25.0,<1
+    - ipykernel >=6.5.0,!=6.30.0
     - jinja2 >=3.0.3
     - jupyter_core
     - jupyter_server >=2.4.0,<3
@@ -48,7 +48,6 @@ test:
     - nodejs >=22,<23
     - pip
     - python {{ python_min }}
-    - m2-grep  # [win]
   imports:
     - jupyterlab
   commands:
@@ -61,8 +60,7 @@ test:
     - jupyter lab licenses
     - jupyter lab path
     - jupyter server extension list
-    - jupyter server extension list 1>server_extensions 2>&1
-    - grep -iE "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK" server_extensions
+    - jupyter server extension list 2>&1 | python -c "import sys, re; ok = re.findall(r'jupyterlab.*{{ version.replace(".", "\\.") }}.*OK', sys.stdin.read()); print(ok); assert ok, 'server extension is not ok'"
     - jupyter lab build --dev-build=False --minimize=False
     - jupyter lab clean
 
