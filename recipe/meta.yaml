@@ -28,8 +28,7 @@ requirements:
     - python {{ python_min }}
   run:
     - async-lru >=1.0.0
-    - httpx >=0.25.0,<1.0.0
-    - importlib-metadata >=4.8.3
+    - httpx >=0.25.0,<1
     - ipykernel >=6.5.0,!=6.30.0
     - jinja2 >=3.0.3
     - jupyter_core
@@ -39,7 +38,7 @@ requirements:
     - notebook-shim >=0.2
     - packaging
     - python >={{ python_min }}
-    - setuptools >=40.1.0
+    - setuptools >=41.1.0
     - tomli >=1.2.2
     - tornado >=6.2.0
     - traitlets
