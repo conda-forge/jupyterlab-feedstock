@@ -11,8 +11,3 @@ conda_build:
   pkg_format: '2'
 bot:
   inspection: hint-all
-# TODO: remove once anaconda-client setttls down
-remote_ci_setup:
-  - conda-forge-ci-setup=4
-  - conda-build>=24.1
-  - anaconda-client>=1.13.0=pyh29332c3_1
