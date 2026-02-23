@@ -1,4 +1,4 @@
-{% set version = "4.6.0a2" %}
+{% set version = "4.6.0a3" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 5c4e46cf9a83d60df08837b9f93ee6625823c5bd8322c9ef385ff45b35252e18
+  sha256: 17a18cd09b0414dce4aa0ca407f43ba1a00d16c526933cce458423c7cb0596c7
 
 build:
   noarch: python
@@ -71,7 +71,7 @@ app:
   type: desk
 
 about:
-  home: https://github.com/jupyterlab/jupyterlab
+  home: https://pypi.org/project/jupyterlab
   license: BSD-3-Clause
   license_family: BSD
   license_file:
