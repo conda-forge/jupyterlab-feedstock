@@ -24,7 +24,7 @@ requirements:
   host:
     - hatch-jupyter-builder >=0.3.2
     - hatchling >=1.21.1
-    - jupyter-builder >=${{ jupyter_builder_min }}
+    - jupyter-builder >={{ jupyter_builder_min }}
     - pip
     - python {{ python_min }}
     - python-build
@@ -35,7 +35,7 @@ requirements:
     - jinja2 >=3.0.3
     - jupyter_core
     - jupyter_server >=2.4.0,<3
-    - jupyter-builder >=${{ jupyter_builder_min }}
+    - jupyter-builder >={{ jupyter_builder_min }}
     - jupyter-lsp >=2.0.0
     - jupyterlab_server >=2.28.0,<3
     - notebook-shim >=0.2
