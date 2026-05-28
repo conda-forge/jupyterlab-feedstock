@@ -1,5 +1,5 @@
 channel_sources:
-- conda-forge/label/jupyter_builder_beta,conda-forge
+- conda-forge
 channel_targets:
 - conda-forge jupyterlab_beta
 docker_image:

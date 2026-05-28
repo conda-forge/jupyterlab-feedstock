@@ -1,4 +1,4 @@
-{% set version = "4.6.0b0" %}
+{% set version = "4.6.0b1" %}
 {% set jupyter_builder_min = "1.0.0b1" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 62d761a69cc0ac43859362cd56b6a2b9264741ba1fbec61ca32a8afcc67202ef
+  sha256: 78b6eeaad3bdfd097afa0af7edfb9680371a8c8882ba715ac6e2a2bba5fcf9cf
 
 build:
   noarch: python
