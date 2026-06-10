@@ -1,70 +1,79 @@
-{% set version = "3.6.0rc1" %}
+{% set version = "4.6.0rc0" %}
+{% set jupyter_builder_min = "1.0.0b1" %}
 
 package:
   name: jupyterlab
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 072242e3b4112e56a4b0b4646b9e42acd4ee6a175c211b5a6efce253d04fef3f
+  url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
+  sha256: 08a033987c2e89f7676162f4fb3db5ddaee71b624e26ca165cc0c4322950252a
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install --install-option="--skip-npm" . -vv
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
     - jupyter-labhub = jupyterlab.labhubapp:main
-    - jlpm = jupyterlab.jlpmapp:main
 
 requirements:
   host:
-    - jupyter-packaging >=0.9,<2
-    - packaging
+    - hatch-jupyter-builder >=0.3.2
+    - hatchling >=1.21.1
+    - jupyter-builder >={{ jupyter_builder_min }}
     - pip
-    - python >=3.7
+    - python {{ python_min }}
+    - python-build
   run:
-    - ipython
-    - jinja2 >=2.1
+    - async-lru >=1.0.0
+    - httpx >=0.25.0,<1
+    - ipykernel >=6.5.0,!=6.30.0
+    - jinja2 >=3.0.3
     - jupyter_core
-    - jupyter_server_ydoc >=0.6.0,<0.7.0
-    - jupyter_server >=1.16.0,<3
-    - jupyterlab_server >=2.19,<3
-    - jupyter_ydoc >=0.2.2,<0.3
-    - nbclassic
-    - notebook <7
-    - packaging
-    - tomli
-    - python >=3.7
-    - tornado >=6.1.0
+    - jupyter_server >=2.19.0,<3
+    - jupyter-builder >={{ jupyter_builder_min }}
+    - jupyter-lsp >=2.0.0
+    - jupyterlab_server >=2.28.0,<3
+    - notebook-shim >=0.2
+    - packaging >=23.2
+    - python >={{ python_min }}
+    - setuptools >=41.1.0
+    - tomli >=1.2.2
+    - tornado >=6.2.0
+    - traitlets
 
 test:
   requires:
-    - nodejs >=16.*,!=17.*,<19
+    - nodejs >=24,<25
     - pip
-    - m2-grep  # [win]
+    - python {{ python_min }}
   imports:
     - jupyterlab
   commands:
     - pip check
     - jupyter lab --version
     - jlpm --version
-    - jlpm versions
+    # TODO: figure out a handy command for yarn 3.4+ that emulates the previous version lister
+    # - jlpm versions
     - jupyter labextension list
     - jupyter lab licenses
     - jupyter lab path
     - jupyter server extension list
-    - jupyter serverextension list
-    - jupyter server extension list 1>server_extensions 2>&1
-    - cat server_extensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
-    - jupyter serverextension list 1>serverextensions 2>&1
-    - cat serverextensions | grep "jupyterlab.*{{ version.replace(".", "\\.") }}.*OK"
-    - jupyter lab build --dev-build=False --minimize=False
+    - jupyter server extension list 2>&1 | python -c "import sys, re; ok = re.findall(r'jupyterlab.*{{ version.replace(".", "\\.") }}.*OK', sys.stdin.read()); print(ok); assert ok, 'server extension is not ok'"
+    - jupyter lab build --dev-build=False --minimize=False --debug
     - jupyter lab clean
 
+app:
+  entry: jupyter lab
+  icon: icon.png
+  summary: JupyterLab {{ version }}
+  type: desk
+
 about:
-  home: https://github.com/jupyterlab/jupyterlab
+  home: https://pypi.org/project/jupyterlab
   license: BSD-3-Clause
   license_family: BSD
   license_file:
@@ -76,15 +85,20 @@ about:
   dev_url: https://github.com/jupyterlab/jupyterlab
   description: >
     JupyterLab is the next-generation user interface for Project Jupyter. It offers all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user inteface. Eventually, JupyterLab will replace the classic Jupyter Notebook.
+
     JupyterLab can be extended using extensions that are npm packages and use our public APIs. You can search for the GitHub topic or npm keyword `jupyterlab-extension` to find extensions. To learn more about extensions, see our user documentation.
+
     JupyterLab is suitable for general usage. For JupyterLab extension developers, the extension APIs will continue to evolve.
+
 extra:
   recipe-maintainers:
-    - jasongrout
-    - blink1073
-    - jochym
-    - ian-r-rose
+    - krassowski
     - afshin
-    - ellisonbg
-    - jtpio
+    - blink1073
     - bollwyvl
+    - ellisonbg
+    - fcollonval
+    - ian-r-rose
+    - jasongrout
+    - jochym
+    - jtpio
