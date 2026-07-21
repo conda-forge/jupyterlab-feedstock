@@ -37,7 +37,7 @@ requirements:
     - notebook-shim >=0.2
     - packaging >=23.2
     - python >={{ python_min }}
-    - setuptools >=41.1,0
+    - setuptools >=41.1.0
     - tomli >=1.2.2
     - tornado >=6.2.0
     - traitlets
