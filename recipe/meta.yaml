@@ -43,6 +43,7 @@ requirements:
     - tomli >=1.2.2
     - tornado >=6.2.0
     - traitlets
+    - typing_extensions >=4.4.0
 
 test:
   requires:
