@@ -1,4 +1,4 @@
-{% set version = "4.5.10" %}
+{% set version = "4.5.11" %}
 
 package:
   name: jupyterlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 77e8d80b78be59b2eaba2154562e21caa6e79c2f1281d6f486584f7144ee2f47
+  sha256: 6534bb389d31f5ceb4357b15d2c002206063b51ef9c1911a079f537749215ddc
 
 build:
   noarch: python
@@ -38,7 +38,6 @@ requirements:
     - packaging >=23.2
     - python >={{ python_min }}
     - setuptools >=41.1.0
-    - tomli >=1.2.2
     - tornado >=6.2.0
     - traitlets
     - typing_extensions >=4.4.0
