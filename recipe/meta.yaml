@@ -40,7 +40,6 @@ requirements:
     - notebook-shim >=0.2
     - packaging >=23.2
     - python >={{ python_min }}
-    - tomli >=1.2.2
     - tornado >=6.2.0
     - traitlets
     - typing_extensions >=4.4.0
