@@ -1,4 +1,4 @@
-{% set version = "4.6.3" %}
+{% set version = "4.6.4" %}
 {% set jupyter_builder_min = "1.0.2" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 2e3db6e3a12495ebd188276e985bf5ac502fbde3d1e8628819920210008de498
+  sha256: 404f49b081819378524886c9db66dba57a5565981eff885830df1baba3a17df5
 
 build:
   noarch: python
@@ -40,7 +40,6 @@ requirements:
     - notebook-shim >=0.2
     - packaging >=23.2
     - python >={{ python_min }}
-    - tomli >=1.2.2
     - tornado >=6.2.0
     - traitlets
     - typing_extensions >=4.4.0
