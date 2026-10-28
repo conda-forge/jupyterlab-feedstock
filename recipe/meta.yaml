@@ -1,5 +1,5 @@
-{% set version = "4.6.0b1" %}
-{% set jupyter_builder_min = "1.0.0b1" %}
+{% set version = "4.7.0b0" %}
+{% set jupyter_builder_min = "1.1.1" %}
 
 package:
   name: jupyterlab
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz
-  sha256: 78b6eeaad3bdfd097afa0af7edfb9680371a8c8882ba715ac6e2a2bba5fcf9cf
+  sha256: 7eac481d9723c0a5e4eff117d12d3fa496c249471b0cc988c2e8c5424c1f359a
 
 build:
   noarch: python
   number: 0
   script:
-    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
   entry_points:
     - jupyter-lab = jupyterlab.labapp:main
     - jupyter-labextension = jupyterlab.labextensions:main
@@ -28,22 +28,21 @@ requirements:
     - python {{ python_min }}
     - python-build
   run:
-    - async-lru >=1.0.0
-    - httpx >=0.25.0,<1
+    - async-lru >=1.0.3
+    - httpx2 >=2,<3
     - ipykernel >=6.5.0,!=6.30.0
     - jinja2 >=3.0.3
     - jupyter_core
-    - jupyter_server >=2.4.0,<3
+    - jupyter_server >=2.19.0,<3
     - jupyter-builder >={{ jupyter_builder_min }}
     - jupyter-lsp >=2.0.0
     - jupyterlab_server >=2.28.0,<3
     - notebook-shim >=0.2
     - packaging >=23.2
     - python >={{ python_min }}
-    - setuptools >=41.1.0
-    - tomli >=1.2.2
     - tornado >=6.2.0
     - traitlets
+    - typing_extensions >=4.6.1
 
 test:
   requires:
